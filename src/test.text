@@ -1,0 +1,32 @@
+<li className="nav-item mx-1">
+						<Link to="/" className="nav-link">
+							<FontAwesomeIcon icon={faHome}  style={{fontSize:'25px'}}  />
+
+							 
+						</Link>
+					</li>
+				 
+				<li className="nav-item mx-1">
+						<Link to="/shop" className="nav-link">
+							<FontAwesomeIcon icon={faShoppingBag}  style={{fontSize:'25px'}}  /> 
+						</Link>
+					</li>
+
+					<li className="nav-item mx-1">
+					<Link
+							to="/channels"
+							className="nav-link"
+						>
+							<FontAwesomeIcon icon={faUsers}    style={{fontSize:'25px'}} />
+						</Link>
+					</li>
+					
+					<li className="nav-item mx-1">
+					<Link
+							to="/subscriptions"
+							className="nav-link"
+						>
+							<FontAwesomeIcon icon={faVideo}  style={{fontSize:'25px'}} />
+						</Link>
+					</li>
+						

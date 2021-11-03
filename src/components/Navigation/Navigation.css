@@ -100,6 +100,11 @@
 	font-size: 20px;
     
 }
+.serachModal{
+	background:rgba(0, 0, 0, 0.5) !important ;
+	border:none;
+	visibility: hidden;
+}
  
 
 @media (max-width: 575.98px) {
@@ -124,13 +129,23 @@
 	 .home{
 		 display: none;
 	 }
-	 .brand{
-		 display: none;
-	 }
+	  
 	 .shop{
        display: none;
 	 }
-	
+	 .basicNav{
+		 visibility: hidden;
+	 }
+	 .serachModal{
+		visibility: visible;
+		border-radius: 8px;
+	}
+	.brand{
+	 
+	}
+	.modalHeader{
+		padding-bottom: 40px;
+	}
 	 .osahan-navbar-search .form-control {
 		background: #eceff0 none repeat scroll 0 0;
 		border: medium none;
@@ -140,7 +155,7 @@
 	}
 	.osahan-navbar-search {
 		margin-right: 0px !important;
-		width:70%;
+		width:1000%;
 	}
 	.m-li:hover{
      font-size: 25px;
@@ -186,6 +201,7 @@
 	.osahan-navbar-search {
 		margin-right: 15px !important;
 	}
+	
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {

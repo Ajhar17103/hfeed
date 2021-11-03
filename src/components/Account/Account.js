@@ -12,6 +12,7 @@ import InfoCards from "./InfoCards";
 import SingleChannelHero from "../SingleChannel/SingleChannelHero";
 import SingleChannelNav from "../SingleChannel/SingleChannelNav";
 import MyVideoCard from "./VideoCard";
+import SearchModal from "../Navigation/SearchModal";
 
 const Account = () => {
 	return (
@@ -35,7 +36,7 @@ const Account = () => {
 					<MyVideos />
 					<MyVideoCard/>
 					<hr className="mt-0" />
-				 
+				 <SearchModal/>
 				</Container>
 				<ThinFooter />
 			</ContentWrapper>

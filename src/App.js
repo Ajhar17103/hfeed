@@ -52,7 +52,7 @@ function App() {
 	
 	<>
 		
-		<Router basename="/feed" >
+		<Router>
 			<Switch>
 				<Route path="/auth" component={Auth} />
 				<Route path="/">

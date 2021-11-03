@@ -32,6 +32,7 @@ import {
 	faUsers,
 	faHome
 } from "@fortawesome/free-solid-svg-icons";
+import SearchModal from "./SearchModal";
 
 const Navigation = ({ props }) => {
 	const [show, setShow] = useState(false);
@@ -71,15 +72,15 @@ const Navigation = ({ props }) => {
 					 */
 				 }
 			 
-				<Navbar.Brand className="mr-1 brand">
+				<Navbar.Brand className="mr-1 ">
 					<Link to="/">
-						<img className="img-fluid" src="img/logo.png" alt="" style={{width:'150px'}} />
+						<img className="img-fluid" src="img/logo.png" alt="" style={{width:'250px'}} />
 					</Link>
 				</Navbar.Brand>
 				{/* Navbar Search*/}
 				<Form
 					inline
-					className=" d-md-inline ml-auto  my-2 my-md-0 osahan-navbar-search"
+					className=" d-md-inline ml-auto  my-2 my-md-0 osahan-navbar-search basicNav"
 				>
 					<InputGroup>
 						<FormControl
@@ -94,6 +95,7 @@ const Navigation = ({ props }) => {
 						</InputGroup.Append>
 					</InputGroup>
 				</Form>
+				<SearchModal faSearch={faSearch}/>
 				{/*Navbar*/}
 				<ul className="navbar-nav ml-auto ml-md-0 osahan-right-navbar">
 				<li className="nav-item mx-1 home">

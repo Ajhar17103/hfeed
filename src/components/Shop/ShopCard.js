@@ -27,4 +27,4 @@ const ShopCart=(props)=> {
 		</>
 	);
 }
-export defau
+export default ShopCart;

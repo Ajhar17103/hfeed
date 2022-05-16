@@ -4,4 +4,15 @@
       border: 0; 
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
- 
+
+.view-card{
+background: #ffffff79 none repeat scroll 0 0;
+    border-radius: 5px !important;
+    box-shadow: 0 0 11px #c5b3b3 !important;
+    border: none !important;
+}
+.subtotal p{
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+}

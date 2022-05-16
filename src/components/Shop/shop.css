@@ -1,3 +1,9 @@
+.product-details-cards{
+	background: #ffffff79 none repeat scroll 0 0;
+    border-radius: 10px !important;
+    box-shadow: 0 0 11px #a19494 !important;
+    border: none !important;
+}
 .card-category-item img {
 	background: #fff none repeat scroll 0 0;
 	width: 130px;
@@ -53,17 +59,19 @@
 	margin: 0;
 }
  
-.list ul li{
+.list li{
 	list-style: none;
-	color: black;
+	color: rgb(51, 49, 49);
 }
-.list ul{
+/* .list ul{
 	text-align: left;
 }
 .list ul li:hover{
 	 color: blue;
 	 cursor: pointer;
-}
+} */
+
+
 .cardBoder{
 	border: 1px solid rgba(204, 201, 201, 0.603);
 	border-radius: 0px !important;
@@ -76,3 +84,94 @@
 	width: 90px !important;
 	height: 90px !important;
 }
+
+.productDetailsContent{
+	padding: 10px;
+}
+.productName{
+	font-size: 22px;
+	font-weight: 700;
+}
+
+.productTitle{
+	display: flex;
+	justify-content: space-between;
+}
+.productAvailabillity{
+	font-size: 12px;
+
+}
+.productVendorInfo{
+	font-size: 12px;
+}
+.productPrice{
+	display: flex;
+	justify-content: space-between;
+}
+.productOther{
+	display: flex;
+	justify-content: space-around;
+}
+ 
+.productCart{
+	display: flex;
+	justify-content: space-evenly;
+}
+.selectQtn{
+	display: flex;
+	justify-content: space-around;
+}
+.quantity-btn{
+	background: #f0f1f1 !important;
+    color: #1c405d !important;
+    font-size: 13px;
+	font-weight: 800;
+}
+.product-btn{
+	background: #1c405d !important;
+    color: white !important;
+    font-size: 13px;
+	font-weight: 600;
+}
+.product-btn-buy{
+	background: #ffc502 !important;
+    color: #1c405d  !important;
+    font-size: 13px;
+	font-weight: 700;
+}
+.product-delivery-commentment{
+	background: #ffffff79 none repeat scroll 0 0;
+    /* border-radius: 10px !important; */
+    box-shadow: 0 0 11px #a19494 !important;
+	border: 0.5px solid #1c405d ;
+}
+.product-card-icon{
+	font-size:25px;
+	color:#ffc502;
+}
+.product-card-title{
+	padding-top: 2px;
+	font-size:18px;
+	font-weight:600;
+	color: #1C405D;
+}
+
+.productTags{
+	padding: 10px;
+	background: #f3f3f2;
+	border-radius: 8px;
+	box-shadow: 0 7px 5px -6px rgb(202, 199, 199);
+	
+}
+
+/* .shopContainer{
+	padding: 0px 10px 10px 15px !important;
+}
+@media (max-width: 575.98px){
+	.shopContainer{
+		padding-bottom: 15px !important;
+		padding-left: 8px;
+		padding-right: 15px !important;
+		padding-top: 0px !important;
+	}
+} */

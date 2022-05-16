@@ -21,7 +21,7 @@ function Checkout() {
 							</Col>
 
 						<Col lg={7} md={7} sm={12} className="card shadow py-5 mb-5">
-						<h4 className='pb-3'>Billing details</h4>
+						<h4 className='pb-3'>Billing Details</h4>
                         <Form className="col-lg-12 col-md-12" noValidate>
 
 								<Form.Row>
@@ -239,11 +239,6 @@ function Checkout() {
 										<p style={{color:'black',}}> <strong>10000000</strong> </p>
 									</Form.Group>
 										  
-									
-									 
-
-                                    
-
 								</Form.Row>
                                 <hr className='hr' />
                                 <Form.Row>

@@ -1,7 +1,7 @@
 footer.sticky-footer {
 	background-color: #e9ecef;
 	padding: 15px;
-	margin-left: 5px;
+	/* margin-left: 5px; */
 }
 footer.sticky-footer .copyright {
 	line-height: 1;
@@ -40,7 +40,7 @@ body.sidebar-toggled footer.sticky-footer {
 	margin: 7px 0 0;
 }
 .footer-logo {
-	margin: 0 0 51px !important;
+	margin: 0 0 30px !important;
 }
 
 @media (max-width: 575.98px) {
@@ -51,9 +51,9 @@ body.sidebar-toggled footer.sticky-footer {
 	footer .text-right {
 		text-align: center !important;
 	}
-	footer.sticky-footer {
+	/* footer.sticky-footer {
 		margin-left: 9px;
-	}
+	} */
 	.sidebar-toggled footer.sticky-footer {
 		margin: 0;
 	}
@@ -73,9 +73,9 @@ body.sidebar-toggled footer.sticky-footer {
 	footer .text-right {
 		text-align: right !important;
 	}
-	footer.sticky-footer {
+	/* footer.sticky-footer {
 		margin-left: 9px;
-	}
+	} */
 	.sidebar-toggled footer.sticky-footer {
 		margin: 0;
 	}

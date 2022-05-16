@@ -1,6 +1,5 @@
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
 import SectionHeader from "../Atomics/SectionHeader/SectionHeader";
 import ChannelCard from "../Atomics/ChannelCard/ChannelCard";
 

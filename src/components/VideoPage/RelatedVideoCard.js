@@ -11,24 +11,25 @@ export default function RelatedVideoCard(props){
 
  
 
- const { id,title,time,videoTitleHref,url,shopUrl,videoTitle,videoCategories,shop,views,timeAgo,video,iconHref,imgAlt,imgHref,imgSrc}=props.vendorVideo;
+	const { id,title,thumbnail,video,description,embedded_link,store_id,store_name,category_id,tags,status,featured,deleted_at,created_at,updated_at,videoTitleHref,url,shopUrl,videoTitle,videoCategories,shop,views,timeAgo,iconHref,imgAlt,imgHref,imgSrc}=props.video;
  
  
 
 	
 	return (
 		<>
-        
+	
+	        
 			<div className="video-card">
 			 
 				<div className="video-card-image">
-					<Link className="play-icon" to={iconHref}>
+					<Link className="play-icon" to={`/video-show/${video}`}>
 						<FontAwesomeIcon icon={faPlayCircle} />
 					</Link>
 					<Link to={imgHref}>
-						<img  src={imgSrc} alt={imgAlt} height="200px"/>
+						<img className="img-fluid" src={`http://shop.hoolo.live/public/videos/${thumbnail}`} alt={title} />
 					</Link>
-			 
+				 
 				</div>
 				<div className="video-card-body">
 
@@ -45,8 +46,7 @@ export default function RelatedVideoCard(props){
 					<div className="video-view">
 						{views} views &nbsp;
 						<FontAwesomeIcon icon={faCalendarAlt} /> {timeAgo} ago
-					</div>
-				*/}
+				</div> */}
 					<div>
 						      
 					</div>
@@ -54,7 +54,7 @@ export default function RelatedVideoCard(props){
 					<div style={{  margin:'5px 0px'}}>
 					<Row>
                        <Col>
-					  <ProductSlide shop={shop}/>
+					  <ProductSlide shop={store_id}/>
 					   </Col>
 					  </Row>
 					</div>

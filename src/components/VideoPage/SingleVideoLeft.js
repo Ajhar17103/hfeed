@@ -10,6 +10,7 @@ const SingleVideoLeft = (props) => {
 		
 			<div className="single-video-left">
 				 
+				 
 			{/*	<VideoTitle
 					title="Contrary to popular belief, Lorem Ipsum (2020) is
 							not."
@@ -22,7 +23,7 @@ const SingleVideoLeft = (props) => {
 			{ /*	<VideoDescription /> */}
                
 
-				<CommentBox id={props.id} />
+				<CommentBox store_uuid={props.store_uuid}  />
 		 
 				 
 			</div>

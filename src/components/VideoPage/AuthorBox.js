@@ -1,9 +1,7 @@
 import Button from "react-bootstrap/Button";
-
 import { VerifiedTooltip } from "../Atomics/CustomCheckTooltips/CustomCheckTooltips";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
+import { faBell ,faUserPlus} from "@fortawesome/free-solid-svg-icons";
 
 export default function AuthorBox({
 	subscriberCount,
@@ -20,7 +18,7 @@ export default function AuthorBox({
 			<div className="single-video-author box mb-3">
 				<div className="float-right">
 					<Button variant="danger">
-						Subscribe <strong>{subscriberCount}</strong>
+					<strong><FontAwesomeIcon icon={faUserPlus} /></strong>	Follow 
 					</Button>{" "}
 					<Button variant="outline-danger">
 						<FontAwesomeIcon icon={faBell} />

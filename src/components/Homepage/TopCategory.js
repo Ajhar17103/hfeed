@@ -10,19 +10,12 @@ function TopCategory() {
 	return (
 		<>
 			<div className="top-category section-padding mb-4">
-				<Row>
-					<Col md={12}>
-						<SectionHeader
-							heading="Product Categories"
-							noIconLabel
-							icon={faEllipsisH}
-						/>
-					</Col>
+				 
 
-					<Col md={12}>
+					 
 						<TopCategoriesSlider />
-					</Col>
-				</Row>
+					 
+			 
 			</div>
 		</>
 	);

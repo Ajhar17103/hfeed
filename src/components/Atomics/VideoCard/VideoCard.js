@@ -3,16 +3,15 @@ import {Row,Col} from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle, faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 import {Link} from 'react-router-dom'
-import ProductSlide from "./ProudctSlide";
+import ProudctSlideClass from "./ProudctSlide";
 import VideoPage from "../../VideoPage/VideoPage";
 
- 
 
 export default function VideoCard(props){
 
-const   Video=props.vendorVideo
+ 
 
- const { title,time,videoTitleHref,url,shopUrl,videoTitle,videoCategories,shop,views,timeAgo,video,iconHref,imgAlt,imgHref,imgSrc}=props.vendorVideo;
+ const { id,title,thumbnail,video,description,embedded_link,store_id,store_name,category_id,tags,status,featured,deleted_at,created_at,updated_at,videoTitleHref,url,shopUrl,videoTitle,videoCategories,shop,views,timeAgo,iconHref,imgAlt,imgHref,imgSrc}=props.vendorVideo;
  
  
 
@@ -24,11 +23,11 @@ const   Video=props.vendorVideo
 			<div className="video-card">
 			 
 				<div className="video-card-image">
-					<Link className="play-icon" to={iconHref}>
+					<Link className="play-icon" to={`/video-show/${video}`}>
 						<FontAwesomeIcon icon={faPlayCircle} />
 					</Link>
 					<Link to={imgHref}>
-						<img className="img-fluid" src={imgSrc} alt={imgAlt} />
+						<img   className="img-fluid" src={`http://shop.hoolo.live/public/videos/${thumbnail}`} alt={title} />
 					</Link>
 				 
 				</div>
@@ -55,7 +54,7 @@ const   Video=props.vendorVideo
 					<div style={{  margin:'5px 0px'}}>
 					<Row>
                        <Col>
-					  <ProductSlide shop={shop}/>
+					          <ProudctSlideClass shop={store_id} />
 					   </Col>
 					  </Row>
 					</div>

@@ -1,10 +1,10 @@
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import { Navbar, Row } from "react-bootstrap";
-
 import CommentBody from "./CommentBody";
-import VideoShop from "../Shop/VideoShop";
 import RelatedVideo from "./RelatedVideo";
+import VideoShop from "../Shop/VideoShop";
+ 
 
 const CommentBox = (props) => {
 	return (
@@ -17,7 +17,7 @@ const CommentBox = (props) => {
 				<div className="video-block section-padding" >
 						<Row>
                         
-                  <VideoShop id={props.id} />
+              <VideoShop store_uuid={props.store_uuid}/>
 								
 						</Row>
 					</div>
@@ -25,12 +25,10 @@ const CommentBox = (props) => {
 					<Tab  eventKey="disqus"     title="Related Video ">
 					
 				
-					<RelatedVideo/>
+					<RelatedVideo store_uuid={props.store_uuid}/>
 					</Tab>
 					
-					<Tab eventKey="fb" title="others" style={{height:'500px'}}>
-						 <h3>Coming Soon...</h3>
-					</Tab>
+				 
 				</Tabs>
 			
 			</div>

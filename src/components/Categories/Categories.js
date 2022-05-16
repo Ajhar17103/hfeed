@@ -1,99 +1,64 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
 import ThinFooter from "../Footer/ThinFooter";
 import SectionHeader from "../Atomics/SectionHeader/SectionHeader";
 import ContentWrapper from "../Atomics/ContentWrapper/ContentWrapper";
 import CategoryCard from "../Atomics/CategoryCard/CategoryCard";
 import Paginate from "../Atomics/Paginate/Paginate";
+import React, { Component } from 'react'
+import axios from "axios";
+ 
+ export class Categories extends Component {
 
-const Categories = () => {
-	return (
-		<>
+	state={
+		categories:[]
+	}
+
+	componentDidMount(){
+
+		axios.get('http://shop.hoolo.live/api/allcategories')
+
+		.then(res=>{
+			console.log(res.data)
+			this.setState(
+				{
+					categories:res.data
+				}
+			)
+		})
+		.catch(res=>{
+			console.log(`this is from categories ${res.data}`)
+		})
+	}
+	 render() {
+		 return (
 			<ContentWrapper>
-				<Container fluid>
-					<div className="video-block section-padding">
-						<Row>
-							<Col md={12}>
-								<SectionHeader heading="Categories" />
-							</Col>
-							<Col xl={3} sm={6} className="mb-3">
-								<CategoryCard
-									name="Your Life"
-									verified
-									views="74,853"
-								/>
-							</Col>
-							<Col xl={3} sm={6} className="mb-3">
-								<CategoryCard
-									name="Unboxing Cool"
-									verified
-									views="74,853"
-								/>
-							</Col>
-							<Col xl={3} sm={6} className="mb-3">
-								<CategoryCard
-									name="Service Reviewing"
-									views="74,853"
-								/>
-							</Col>
-							<Col xl={3} sm={6} className="mb-3">
-								<CategoryCard
-									name="Gaming"
-									verified
-									views="74,853"
-								/>
-							</Col>
-							<Col xl={3} sm={6} className="mb-3">
-								<CategoryCard
-									name="Technology Tutorials"
-									views="74,853"
-								/>
-							</Col>
-							<Col xl={3} sm={6} className="mb-3">
-								<CategoryCard
-									name="Singing"
-									verified
-									views="74,853"
-								/>
-							</Col>
-							<Col xl={3} sm={6} className="mb-3">
-								<CategoryCard name="Cooking" views="74,853" />
-							</Col>
-							<Col xl={3} sm={6} className="mb-3">
-								<CategoryCard name="Traveling" views="74,853" />
-							</Col>
-							<Col xl={3} sm={6} className="mb-3">
-								<CategoryCard name="Education" views="74,853" />
-							</Col>
-							<Col xl={3} sm={6} className="mb-3">
-								<CategoryCard
-									name="Noodles, Sauces & Instant Food"
-									views="74,853"
-								/>
-							</Col>
-							<Col xl={3} sm={6} className="mb-3">
-								<CategoryCard
-									name="Comedy"
-									verified
-									views="74,853"
-								/>{" "}
-							</Col>
-							<Col xl={3} sm={6} className="mb-3">
-								<CategoryCard
-									name="Lifestyle Advic"
-									views="74,853"
-								/>
-							</Col>
-						</Row>
-					</div>
-					<Paginate />
-				</Container>
-				<ThinFooter />
-			</ContentWrapper>
-		</>
-	);
-};
-
-export default Categories;
+			<Container fluid>
+				<div className="video-block section-padding">
+					<Row>
+						<Col md={12}>
+							<SectionHeader heading="Categories" />
+						</Col>
+					
+					{
+						this.state.categories.map((category)=>(
+							<Col xl={3} sm={6} key={category.id} className="mb-3">
+							<CategoryCard
+								category={category} 
+							/>
+						</Col>
+						))
+					}	 
+					</Row>
+				</div>
+				 
+			</Container>
+			<ThinFooter />
+		</ContentWrapper>
+		 )
+	 }
+ }
+ 
+ export default Categories
+ 

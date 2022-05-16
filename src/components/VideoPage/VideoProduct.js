@@ -1,39 +1,28 @@
 import SectionHeader from "../Atomics/SectionHeader/SectionHeader";
-import {
-	VerifiedTooltip,
-	UnverifiedTooltip,
-} from "../Atomics/CustomCheckTooltips/CustomCheckTooltips";
-
+import React from 'react'
+import {VerifiedTooltip,UnverifiedTooltip} from "../Atomics/CustomCheckTooltips/CustomCheckTooltips";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faPlayCircle,
-	faEllipsisV,
-	faCalendarAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import {faPlayCircle,faEllipsisV,faCalendarAlt} from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
-const VideoProduct = ({
- 
-	 
-	active = null,
-	verified = false,
-	product
-}) => {
-	 
+
+function VideoProduct({ active = null,verified = false,product}) {
+
 	const activeStatus = active
-		? "video-card video-card-list active"
-		: "video-card video-card-list";
-	const categoryClass = verified
-		? "video-page text-success-custom"
-		: "video-page text-danger-custom";
-	return (
-		<>
+	? "video-card video-card-list active"
+	: "video-card video-card-list";
+    const categoryClass = verified
+	? "video-page text-success-custom"
+	: "video-page text-danger-custom";
+	
+	 return (
+		 <>
 		 
-		 
-			<div className={activeStatus}>
+			 <div className={activeStatus}>
 				<div className="video-card-image">
 					 
-					<a href={product.permalink}>
-						<img className="img-fluid"   src={product.images[0]==null? 'img/product.png':product.images[0].src} style={{height:'50px'}}  />
+					<a href="#">
+						<img className="img-fluid"   src={`https://shop.hoolo.live/images/simple_products/${product.thumbnail}`} style={{height:'50px'}}  />
 					</a>
 				 
 				</div>
@@ -42,21 +31,22 @@ const VideoProduct = ({
 					
 
 					<div className="video-title">
-						<a>{product.name}</a>
+						<a>{product.product_name.en}</a>
 					</div>
 					<div className={categoryClass}>
-					 {product.categories[0].name}
+					  {JSON.parse(product.category_title).en }
 					</div>
 					<div  >
 					{
-						product.sale_price==0?<span style={{fontWeight:'700',}}>{ `৳ ${product.regular_price}`}  </span>:<span> <strong> { `৳ ${product.sale_price} `} </strong> <strong style={{textDecoration:'line-through'}}> { `৳ ${product.regular_price}`}</strong> </span>    
+						product.offer_price==0?<span style={{fontWeight:'700',}}>{ `৳ ${product.price}`}  </span>:<span> <strong> { `৳ ${product.offer_price} `} </strong> <strong style={{textDecoration:'line-through'}}> { `৳ ${product.price}`}</strong> </span>    
 				    
 					}
 					</div>
 				</div>
 			</div>
-		</>
-	);
-};
-
-export default VideoProduct;
+		 </>
+	 )
+ }
+ 
+ export default VideoProduct;
+ 

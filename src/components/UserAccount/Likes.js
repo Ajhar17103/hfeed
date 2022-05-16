@@ -1,0 +1,60 @@
+import React from "react";
+import { Accordion, Card, Table } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAngleRight,
+  faLink,
+  faThumbsUp,
+  faWalking,
+} from "@fortawesome/free-solid-svg-icons";
+import NullTable from "./NullTable";
+
+function Likes(props) {
+  const classes = `card text-white bg-secondary o-hidden h-100 border-none`;
+
+  return (
+    <>
+      <div className="col-xl-4 col-sm-6 mb-4">
+        <div className="card o-hidden">
+          {/* <div className="card-body">
+						<div className="card-body-icon">
+							<FontAwesomeIcon icon={faThumbsUp} fixedWidth />
+						</div>
+						<div className="mr-5">
+                        <b>Likes</b>    
+						</div>
+					</div> */}
+          <Accordion>
+            <Accordion.Toggle as={Card.Footer} variant="link" eventKey="0">
+              <a className="text-dark clearfix small z-1">
+                <strong>
+                  <span className="float-left">Likes</span>
+                  <span className="float-right">
+                    <FontAwesomeIcon icon={faAngleRight} />
+                  </span>
+                </strong>
+              </a>
+            </Accordion.Toggle>
+
+            <Accordion.Collapse eventKey="0">
+              <LikesTable
+                orders={props.orders}
+                totalOrders={props.totalOrders}
+              />
+            </Accordion.Collapse>
+          </Accordion>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Likes;
+
+function LikesTable(props) {
+  return (
+    <>
+      <NullTable name="Likes " />
+    </>
+  );
+}

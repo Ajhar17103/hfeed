@@ -34,10 +34,11 @@ const FatFooter = () => {
 										/>
 									</Link>
 								</div>
-								<p>
-								Call us 24/7
-								</p>
-								<p style={{color:'#b1362f', fontSize:'25px'}}><strong>0123456789</strong> </p>
+
+								 
+								<p style={{color:'#b1362f', fontSize:'25px'}}>
+								<span style={{color:'black'}}>Call us 24/7</span> <br/>
+									<strong >(+880) 179 877 6997</strong> </p>
 								<p>
 								476/C, Malibagh DIT Road, Dhaka- 1219
 								</p>
@@ -45,23 +46,23 @@ const FatFooter = () => {
 								<p className="mb-0">
 									<a href="#" className="text-dark">
 										 
-									hulusthul.live@outlook.com
+									hoolo.live@outlook.com
 									</a>
 								</p>
 								 
 							</Col>
 
 							<Col lg={2} md={2}>
-								<h6 className="mb-4">Company Info</h6>
+								<h6 className="mb-4">  Company Info</h6>
 								<ul>
 									<li>
-										<a href="#">About Hulusthul</a>
+										<a href="#">About hoolo</a>
 									</li>
 									<li>
-										<a href="#">Blog</a>
+										<a href="https://hoolo.live/university/">hoolo University</a>
 									</li>
 									<li>
-										<a href="#">Contact</a>
+										<a href="https://shop.hoolo.live/register">Apply For Seller</a>
 									</li>
 									<li>
 										<a href="#">Our Location</a>
@@ -80,7 +81,7 @@ const FatFooter = () => {
 										<a href="#">Credit Policy</a>
 									</li>
 									<li>
-										<a href="#">Privacy Statement</a>
+										<a href="https://hoolo.live/privacy-policy">Privacy Statement</a>
 									</li>
 									<li>
 										<a href="#">Terms & Conditions</a>
@@ -130,7 +131,7 @@ const FatFooter = () => {
 						<Row>
 							<Col lg={12} md={12} >
 								<div style={{textAlign:'center'}}>
-								<span >Copyright © 2021 - Hulusthul.live. All rights reserved.</span>
+								<span >Copyright © 2021-2022 - hoolo.live, Developed By hoolo Technologies.</span>
 									</div>
 							 
 								 

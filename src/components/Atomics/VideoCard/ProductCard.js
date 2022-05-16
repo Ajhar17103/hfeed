@@ -4,7 +4,7 @@
 const ProductCard = (props) => {
  
      
-   const { id,store, images,name,regular_price,sale_price,permalink}=props.product
+   const { id,product_name,store_id,slug,product_detail,category_id,product_tags,price,offer_price,tax,tax_rate,thumbnail, images,name,regular_price,permalink}=props.product
 
 
 
@@ -17,22 +17,23 @@ const ProductCard = (props) => {
    
 
        <div className="card-category-items mt-0 mb-0  " >
-     <a href={permalink}>
+     <a href={`https://shop.hoolo.live/products/${id}/${slug}`}>
     <div style={{backgroundColor:"#ede4e4",margin:'0 3px', borderRadius:'10px'}}>
  
       <div >
  
-       <img className="img-fluid  " style={{background:'none',marginTop:'5px',borderRadius:'25px'}} src={images[0]==null? 'img/product.png':images[0].src} alt="" />
+       <img className="img-fluid  " style={{background:'none',marginTop:'5px',borderRadius:'25px'}} src={`https://shop.hoolo.live/images/simple_products/${thumbnail}`} alt={product_name} />
        </div>
        <div   className="p-3">
  
  
        
        <h5 style={{fontSize:'12px'}}>{
-     sale_price==0?<span>{ `৳ ${regular_price}`}  </span>:<span> <strong> { `৳ ${sale_price} `} </strong> <strong style={{textDecoration:'line-through'}}> { `৳ ${regular_price}`}</strong> </span>    
+     offer_price==0?<span>{ `৳ ${price}`}  </span>:<span> <strong> { `৳ ${ offer_price} `} </strong> <strong style={{textDecoration:'line-through'}}> { `৳ ${price}`}</strong> </span>    
      
    }</h5>
         
+       
        </div>
    
       

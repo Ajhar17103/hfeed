@@ -1,0 +1,34 @@
+.banner-slides{
+	margin-top: -30px;
+	margin-bottom: 15px;
+}
+.banner-item img {
+	height: auto;
+	width: 100%;
+	border-radius: none;
+	box-shadow: 0 0 2px #ccc;
+	margin: 1px 0 8px;
+	transform: scale(1);
+
+}
+ 
+.banner-item {
+	text-align: center;
+ 
+}
+.top-category .banner-item {
+	padding: 20px 11px;
+}
+.banner-item h6 {
+	font-size: 13px;
+	margin: 5px 0 3px;
+	overflow: hidden;
+	color: #1c405d !important;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.banner-item p {
+	font-size: 11px;
+	font-weight: 500;
+	margin: 0;
+}

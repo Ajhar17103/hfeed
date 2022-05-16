@@ -1,59 +1,41 @@
+import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./shop.css";
-import ThinFooter from "../Footer/ThinFooter";
-import SectionHeader from "../Atomics/SectionHeader/SectionHeader";
-import ContentWrapper from "../Atomics/ContentWrapper/ContentWrapper";
-import ShopCart from "./ShopCard";
-import Paginate from "../Atomics/Paginate/Paginate";
-import { useEffect,useState } from "react";
-import api from '../../Api/Api'
+import axios from "axios";
 import VideoShopCart from "./VideoShopCard";
- 
 
-
-const VideoShop = (props) => {
-
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
-  let fetchProducts = () => {
-    api
-      .get("products", {
-        per_page: 20,
-      })
-      .then((response) => {
-        if (response.status === 200) {
-          setProducts(response.data);
-        }
-      })
-      .catch((error) => {});
+class VideoShop extends Component {
+  state = {
+    products: [],
   };
-  return (
-    <>
-         
-       {
-           console.log(`this is video shop ${props.id}`)
-       } 
-               
- 
+  componentDidMount() {
+    axios
+      .get("https://shop.hoolo.live/api/allproducts")
+      .then((res) => {
+        this.setState({
+          products: res.data,
+        });
+      })
+      .catch((res) => {
+        console.log(`this is error from laravel ${res}`);
+      });
+  }
+  render() {
+    return (
+      <>
+        {this.state.products.map(
+          (product) =>
+            this.props.store_uuid === product.store_uuid && (
+              <Col xl={3} sm={3} xs={6} className="mb-3" key={product.id}>
+                <VideoShopCart product={product} />
+              </Col>
+            )
+        )}
+      </>
+    );
+  }
+}
 
-              {products.map((product) => (
-                <Col xl={3} sm={3} xs={6} className="mb-3" key={product.id}>
-                  <VideoShopCart product={product} />
-                  
-                </Col>
-              ))}
-            
-       
-           
-      
-    </>
-  );
-};
-
-export default VideoShop ;
+export default VideoShop;

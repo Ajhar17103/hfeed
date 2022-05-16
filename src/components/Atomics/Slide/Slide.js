@@ -5,22 +5,23 @@ import "./Slide.css";
 export default function Slide(props) {
  
 
-	const {name,alt,image,url}=props.categories
+	const {title,alt,image,url}=props.categories
 	return (
 		<>
+		
 			<div className="item">
 				<div className="category-item">
 				
-						<img
+						{/* <img
 							className="img-fluid custom-slick-img"
 						
-							src={image==null ? 'img/category.png':image}
+							src={image==null ? 'img/category.png':`https://shop.hulusthul.live/images/category/${image}`}
 							alt={alt}
 							
-					 />
+					 /> */}
 						<h6 style={{fontWeight:'700'}}>
 							
-							<a href={url} style={{color:"#fcb800"}}> {name} </a>
+						  {JSON.parse(title).en}  
 							  
 						</h6>
 					

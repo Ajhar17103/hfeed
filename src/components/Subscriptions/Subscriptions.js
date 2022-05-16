@@ -1,146 +1,61 @@
+import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
 import ThinFooter from "../Footer/ThinFooter";
-
 import SectionHeader from "../Atomics/SectionHeader/SectionHeader";
 import ContentWrapper from "../Atomics/ContentWrapper/ContentWrapper";
 import SubscriptionChannelCard from "../Atomics/SubscriptionChannelCard/SubscriptionChannelCard";
-import Paginate from "../Atomics/Paginate/Paginate";
+import axios from "axios";
+import PreLoader from "../Atomics/Preloader/PreLoader";
 
-const Subscriptions = () => {
-	return (
-		<ContentWrapper>
-			<Container fluid>
-				<div className="video-block section-padding">
-					<Row>
-						<Col md={12}>
-							<SectionHeader heading="Subscriptions" />
-						</Col>
+export class Subscriptions extends Component {
+  state = {
+    stores: [],
+    isloading: false,
+  };
+  componentDidMount() {
+    axios
+      .get("https://shop.hoolo.live/api/allstores")
 
-						<Col xl={3} sm={6} className="mb-3">
-							<SubscriptionChannelCard
-								imgSrc="img/s1.jpg"
-								views="1.4M"
-								channelName="Channel Name"
-								subscriberCount="382,323"
-								success
-								verified
-							/>
-						</Col>
+      .then((res) => {
+        this.setState({
+          stores: res.data,
+          isloading: true,
+        });
+      })
+      .catch((res) => {
+        console.log(`this is error from laravel ${res}`);
+      });
+  }
+  render() {
+    return (
+      <>
+        {this.state.isloading ? (
+          <ContentWrapper>
+            <Container fluid>
+              <div className="video-block section-padding">
+                <Row>
+                  <Col md={12}>
+                    <SectionHeader heading="All Store List" />
+                  </Col>
 
-						<Col xl={3} sm={6} className="mb-3">
-							<SubscriptionChannelCard
-								imgSrc="img/s1.jpg"
-								views="1.4M"
-								channelName="Channel Name"
-								subscriberCount="382,323"
-							/>
-						</Col>
-
-						<Col xl={3} sm={6} className="mb-3">
-							<SubscriptionChannelCard
-								imgSrc="img/s1.jpg"
-								views="1.4M"
-								channelName="Channel Name"
-								subscriberCount="382,323"
-								isSubscribed
-								verified
-							/>
-						</Col>
-
-						<Col xl={3} sm={6} className="mb-3">
-							<SubscriptionChannelCard
-								imgSrc="img/s1.jpg"
-								views="1.4M"
-								channelName="Channel Name"
-								subscriberCount="382,323"
-							/>
-						</Col>
-
-						<Col xl={3} sm={6} className="mb-3">
-							<SubscriptionChannelCard
-								imgSrc="img/s1.jpg"
-								views="1.4M"
-								channelName="Channel Name"
-								subscriberCount="382,323"
-							/>
-						</Col>
-
-						<Col xl={3} sm={6} className="mb-3">
-							<SubscriptionChannelCard
-								imgSrc="img/s1.jpg"
-								views="1.4M"
-								channelName="Channel Name"
-								subscriberCount="382,323"
-							/>
-						</Col>
-
-						<Col xl={3} sm={6} className="mb-3">
-							<SubscriptionChannelCard
-								imgSrc="img/s1.jpg"
-								views="1.4M"
-								channelName="Channel Name"
-								subscriberCount="382,323"
-							/>
-						</Col>
-
-						<Col xl={3} sm={6} className="mb-3">
-							<SubscriptionChannelCard
-								imgSrc="img/s1.jpg"
-								views="1.4M"
-								channelName="Channel Name"
-								subscriberCount="382,323"
-								isSubscribed
-								verified
-							/>
-						</Col>
-
-						<Col xl={3} sm={6} className="mb-3">
-							<SubscriptionChannelCard
-								imgSrc="img/s1.jpg"
-								views="1.4M"
-								channelName="Channel Name"
-								subscriberCount="382,323"
-								isSubscribed
-								verified
-							/>
-						</Col>
-
-						<Col xl={3} sm={6} className="mb-3">
-							<SubscriptionChannelCard
-								imgSrc="img/s1.jpg"
-								views="1.4M"
-								channelName="Channel Name"
-								subscriberCount="382,323"
-							/>
-						</Col>
-
-						<Col xl={3} sm={6} className="mb-3">
-							<SubscriptionChannelCard
-								imgSrc="img/s1.jpg"
-								views="1.4M"
-								channelName="Channel Name"
-								subscriberCount="382,323"
-							/>
-						</Col>
-
-						<Col xl={3} sm={6} className="mb-3">
-							<SubscriptionChannelCard
-								imgSrc="img/s1.jpg"
-								views="1.4M"
-								channelName="Channel Name"
-								subscriberCount="382,323"
-							/>
-						</Col>
-					</Row>
-					<Paginate />
-				</div>
-			</Container>
-			<ThinFooter />
-		</ContentWrapper>
-	);
-};
+                  {this.state.stores.map((store) => (
+                    <Col xl={3} sm={6} xs={6} className="mb-3" key={store.id}>
+                      <SubscriptionChannelCard store={store} />
+                    </Col>
+                  ))}
+                </Row>
+              </div>
+            </Container>
+            <ThinFooter />
+          </ContentWrapper>
+        ) : (
+          <PreLoader />
+        )}
+      </>
+    );
+  }
+}
 
 export default Subscriptions;

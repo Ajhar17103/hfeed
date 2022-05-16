@@ -1,16 +1,40 @@
+import React, { Component } from 'react'
 import {Container,Row,Col} from 'react-bootstrap'
 import { CommentMedia, CustomMedia } from "./CommentMedia";
 import "./VideoPage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle, faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
-import {Link} from 'react-router-dom'
-import vendorVideo from '../../Api/VendorVideo';
+import axios from 'axios';
 import RelatedVideoCard from './RelatedVideoCard';
 import VideoBlock from '../Homepage/VideoBlock';
  
-export default function RelatedVideo() {
-	return (
-		<>
+
+
+ 
+ export class RelatedVideo extends Component {
+
+    state={
+		isLoading:false,
+		videos:[]
+	}
+	 componentDidMount(){
+	
+		   axios.get('https://shop.hoolo.live/api/videos')
+		  .then(res=>{
+			 
+	
+			this.setState({
+				videos:res.data
+			})
+		  })
+		  .catch(res=>{
+			console.log(`this is error from laravel ${res}`)
+		  })
+	
+		}
+     render() {
+         return (
+            <>
 			 
              <div className="video-block section-padding ">
 				<Row>
@@ -20,9 +44,9 @@ export default function RelatedVideo() {
    
     
     {
-        vendorVideo.map((vendorVideo)=>(
-            <Col lg={4} md={4} sm={6} className="mb-3" >
-                <RelatedVideoCard key={vendorVideo.id} vendorVideo={vendorVideo} />
+        this.state.videos.map((video)=>(
+           this.props.store_uuid===video.store_uuid && <Col lg={4} md={4} sm={6} className="mb-3" >
+                <RelatedVideoCard key={video.id} video={video} />
                 </Col>
         ))
     }
@@ -40,8 +64,9 @@ export default function RelatedVideo() {
 				 
 		  
 		</>
-	);
-}
-
-
+         )
+     }
+ }
+ 
+ export default RelatedVideo
  

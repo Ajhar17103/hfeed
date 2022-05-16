@@ -1,47 +1,29 @@
+import React, { Component } from 'react'
 import Slider from "react-slick";
 import ProductCard from "./ProductCard";
-import api from "../../../Api/Api";
 import { useEffect,useState } from "react";
+import axios from 'axios';
 
-
-
-export default function ProductSlide({shop}) {
-
-	const [products, setProducts] = useState([]);
-
-	useEffect(() => {
-	  fetchProducts();
-	}, []);
-  
-	let fetchProducts = () => {
-	  api
-		.get("products", {
-		  per_page: 20,
-		})
-		.then((response) => {
-		  if (response.status === 200) {
-			setProducts(response.data);
-		  }
-		})
-		.catch((error) => {});
-	};
-	var settings = {
+ 
+export default class ProudctSlideClass extends Component {
+	state={
+		products:[],
 		dots: false,
 		infinite: true,
-		speed: 500,
-		slidesToShow: 3,
+		speed: 1500,
+		slidesToShow: 1,
 		slidesToScroll: 1,
 		initialSlide: 0,
 		swipeToSlide: true,
-		autoplay: false,
-		autoplaySpeed: 1500,
+		autoplay: true,
+		autoplaySpeed: 4000,
 		 
 		 
 		responsive: [
 			{
 				breakpoint: 1200,
 				settings: {
-					slidesToShow: 3,
+					slidesToShow: 1,
 					slidesToScroll: 1,
 					initialSlide: 1,
 				},
@@ -49,7 +31,7 @@ export default function ProductSlide({shop}) {
 			{
 				breakpoint: 1100,
 				settings: {
-					slidesToShow: 3,
+					slidesToShow: 2,
 					slidesToScroll: 1,
 					initialSlide: 1,
 				},
@@ -57,39 +39,44 @@ export default function ProductSlide({shop}) {
 			{
 				breakpoint: 600,
 				settings: {
-					slidesToShow: 3,
+					slidesToShow: 2,
 					slidesToScroll: 1,
 					initialSlide: 1,
 				},
 			},
 		],
+	  }
+	   settings = {
+		
 	};
 	
-	return (
-		<>
-		
-			<Slider {...settings}>
-                   
-						  {
-							  products.map((product)=>(
+	  componentDidMount(){
+		axios.get('https://shop.hoolo.live/api/allproducts')
+		.then(res=>{
+		 
+	
+		  this.setState({
+			products:res.data
+		  })
+		})
+		.catch(res=>{
+		 console.log(`this is error from products card ${res}`)
+		})
+	  }
+	render() {
+		return (
+			<>
+			<Slider {...this.state}>
+				 {
+							  this.state.products.map((product)=>(
 
-							 shop==product.store.shop_name && <ProductCard product={product}/>
+							 this.props.store_uuid==product.store_uuid && <ProductCard product={product}/>
 							  ))
 						  }
-
-						 
-								
-						 
-						 
-				
-				 
-				 
-				
-               { /* <ProductCard/>
-                 <ProductCard/>
-                 <ProductCard/>
-			   <ProductCard/> */}
-			</Slider>
-		</>
-	);
+			 </Slider>
+			</>
+		)
+	}
 }
+
+ 

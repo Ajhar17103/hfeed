@@ -10,19 +10,10 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 const ThinFooter = () => {
 	return (
 		<>
-			<footer className="sticky-footer"   >
+			<footer className="sticky-footer mb-5"   >
 				<Container>
 					<Row className="no-gutters">
-						<Col lg={6} sm={6}>
-							<p className="mt-1 mb-0">
-								&copy; Copyright 2021{" "}
-								<strong className="text-dark">Hulusthul.live</strong>.
-								All Rights Reserved
-								<br />
-								 
-							</p>
-						</Col>
-						<Col lg={6} sm={6} className="text-right">
+					<Col lg={6} sm={6} className="text-right">
 							<div className="app">
 								<a href="#" className="mr-1">
 									<img alt="" src="img/logo.png" />
@@ -30,6 +21,17 @@ const ThinFooter = () => {
 								 
 							</div>
 						</Col>
+						
+						<Col lg={6} sm={6}>
+							<p className="mt-1 mb-0">
+								&copy; Copyright 2021-2022{" "}
+								<strong className="text-dark">Hulusthul.live</strong>.
+								Developed By Hulusthul Technologies 
+								<br />
+								 
+							</p>
+						</Col>
+						
 					</Row>
 				</Container>
 			</footer>

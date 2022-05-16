@@ -1,10 +1,10 @@
 import Slider from "react-slick";
-
 import Col from "react-bootstrap/Col";
+
 function Carousel() {
 	return (
 		<>
-			<Col md={7}>
+			<Col md={6}>
 				<div className="login-main-right bg-white p-5 mt-5 mb-5">
 					<AuthScreenSlider />
 				</div>
@@ -30,37 +30,19 @@ function AuthScreenSlider() {
 		<>
 			<Slider {...settings}>
 				<Slide
-					heading="Watch videos offline"
-					imgSrc="/img/login.png"
+					heading=" "
+					imgSrc="/img/login-2.png"
 					imgAlt="LOGO"
 				>
-					When an unknown printer took a galley of type and scrambled
+					{/* When an unknown printer took a galley of type and scrambled
 					<br /> it to make a type specimen book. It has survived not{" "}
 					<br />
-					only five centuries
+					only five centuries */}
 				</Slide>
 
-				<Slide
-					heading="Download videos effortlessly"
-					imgSrc="/img/login.png"
-					imgAlt="LOGO"
-				>
-					When an unknown printer took a galley of type and scrambled
-					<br /> it to make a type specimen book. It has survived not{" "}
-					<br />
-					only five centuries
-				</Slide>
+				 
 
-				<Slide
-					heading="Create GIFs"
-					imgSrc="/img/login.png"
-					imgAlt="LOGO"
-				>
-					When an unknown printer took a galley of type and scrambled
-					<br /> it to make a type specimen book. It has survived not{" "}
-					<br />
-					only five centuries
-				</Slide>
+				 
 			</Slider>
 		</>
 	);

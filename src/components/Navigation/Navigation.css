@@ -1,20 +1,16 @@
-.sticky-top {
-	position: sticky;
-	top: 0;
-	z-index: 999;
-}
+
 .osahan-nav {
-	box-shadow: 0 0 10px #f2f2f2 !important;
-	padding: 10px !important;
-	height: 80px;
-	background-color: #b1362f
+	padding: 5px !important;
+	height: 75px;
+	background:  #1C405D;
  
 }
 .mobile-nav{
 	box-shadow: 0 0 10px #f2f2f2 !important;
-	padding: 15px !important;
+	padding: 5px !important;
 	height: 60px;
-	background-color: #b1362f
+	color: white;
+	background:  #1C405D;
  
 }
 .osahan-navbar-search .form-control {
@@ -25,7 +21,7 @@
 	width: 350px !important;
 }
 .osahan-navbar-search {
-	margin-right: 84px !important;
+	margin-right: 0px !important;
 }
 .osahan-navbar-search .btn {
 	background: #eceff0 none repeat scroll 0 0;
@@ -40,20 +36,46 @@
 .osahan-right-navbar {
 	margin: 0 7px 0 0;
 }
+ 
+.navContent{
+	color: rgb(87, 83, 83);
+}
+.mobNavFont{
+	font-size:25px;
+	 color:#b7b9bd;
+	 background: none;
+	  
+ }
+ .nav-link{
+	 color: #b9bbbe;
+ }
+
+a.activeLinkClasses .mobNavFont{
+	color:rgb(255, 255, 255);
+	background: none;
+}
+a.activeLinkClasses {
+	color:rgb(255, 255, 255);
+}
+a:hover{
+	color:rgb(238, 230, 230)
+}
 .navbar .dropdown-menu.show {
 	right: 0;
 	left: auto;
 }
 .user-dropdown-link img {
-	border-radius: 50px;
-	height: 30px;
-	margin: -9px 2px -6px 0;
-	width: 30px;
+	border-radius: 5px;
+	height: 35px;
+	margin: 2px;
+	width: 35px;
 }
 .navbar-nav {
 	 text-align: center !important
 }
-
+.brand img{
+	width: 150px;
+}
 .navbar-nav .form-inline .input-group {
 	width: 100%;
 }
@@ -91,7 +113,7 @@
 }
 .modal-content {
 	border: medium none;
-	border-radius: 2px;
+	border-radius: 20px;
 }
 .m-nav{
 	visibility: hidden;
@@ -101,12 +123,21 @@
     
 }
 .serachModal{
-	background:rgba(0, 0, 0, 0.5) !important ;
+	background-color: none !important ;
 	border:none;
 	visibility: hidden;
+	 
 }
  
 
+ .navOnScrollActive{
+   visibility: visible;
+   transition: all 0.2s;
+ }
+ .navOnScrollHidden{
+   visibility: hidden;
+   transition: all 0.2s;
+ }
 @media (max-width: 575.98px) {
 	.osahan-right-navbar .nav-link {
 		font-size: 0;
@@ -115,6 +146,9 @@
 	.osahan-right-navbar .nav-link .fas,
 	.osahan-right-navbar .nav-link svg {
 		font-size: 12px;
+	}
+	.osahan-nav .d-nav{
+		display: none;
 	}
 	#sidebarToggle {
 		margin: 0 9px 0 0;
@@ -129,20 +163,24 @@
 	 .home{
 		 display: none;
 	 }
+	 .profileIcon{
+		 display: none;
+	 }
+	 .brand img{
+		width: 150px;
+	}
 	  
 	 .shop{
        display: none;
 	 }
 	 .basicNav{
-		 visibility: hidden;
+		  display: none;
 	 }
-	 .serachModal{
+  .serachModal{
 		visibility: visible;
 		border-radius: 8px;
-	}
-	.brand{
-	 
-	}
+		/* margin-left: 95px; */
+	} 
 	.modalHeader{
 		padding-bottom: 40px;
 	}
@@ -155,11 +193,12 @@
 	}
 	.osahan-navbar-search {
 		margin-right: 0px !important;
-		width:1000%;
+		width:100%;
 	}
 	.m-li:hover{
      font-size: 25px;
 	}
+ 
 	 
 }
 
@@ -178,7 +217,7 @@
 	.navbar-brand img {
 		vertical-align: top;
 	}
-	 
+ 
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
 	.osahan-right-navbar .nav-link {
@@ -203,8 +242,10 @@
 	}
 	
 }
+ 
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
+	 
 	.osahan-right-navbar .nav-link {
 		font-size: 0;
 		padding: 22px 5px !important;

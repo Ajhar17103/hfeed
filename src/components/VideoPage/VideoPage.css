@@ -134,7 +134,7 @@
 	background: #fff none repeat scroll 0 0;
 	border-radius: 2px;
 	box-shadow: 0 0 11px #ececec;
-	height: 400px;
+	height: auto;
 	overflow: auto;
 }
 .video-slider-right-list .video-card-list .video-card-image {
@@ -205,6 +205,7 @@
 }
 .leftItems{
 	position: relative;
+	 
 }
  
 
@@ -227,18 +228,8 @@
 }
 
 @media (max-width: 576px)   {
-	.smFixedVideo{
-		position: fixed;
-		 z-index: 1;
-		 background-color: none;
-		 margin-top: -30px;
-		 width: 100%;
-		 background-color: rgb(238, 230, 230);
-	}
-	.sm-position{
-		position: relative;
-		margin-top:  260px;
-	}
+ 
+	 
    
 	.smFixedVideo iframe{
       height: 200px;
@@ -248,9 +239,7 @@
 	.single-video-title h2 {
 		font-size: 12px;
 	}
-	 .video-slider-right-list{
-		 display: none;
-	 }
+	 
 	 .single-video-author{
 		 display: none;
 	 }

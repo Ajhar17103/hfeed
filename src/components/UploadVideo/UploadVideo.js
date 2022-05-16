@@ -15,49 +15,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 const UploadVideo = () => {
-	return (
-		<>
-			<ContentWrapper>
-				<Container fluid className="upload-details">
-					<Row>
-						<Col lg={12}>
-							<HeadingWrapper heading="Upload Details" />
-						</Col>
-						<Col lg={2}>
-							<div    > <input type="file"  style={{}}  /></div>
-						</Col>
+  return (
+    <>
+      <ContentWrapper>
+        <Container fluid className="upload-details">
+          <Row>
+            <Col lg={12}>
+              <HeadingWrapper heading="Upload Details" />
+            </Col>
+          </Row>
+          <hr />
 
-						<Col lg={10}>
-							<div className="osahan-title">
-								Contrary to popular belief, Lorem Ipsum (2020)
-								is not.
-							</div>
-							<div className="osahan-size">
-								102.6 MB . 2:13 MIN Remaining
-							</div>
-							<div className="osahan-progress">
-								<ProgressBar striped animated now={75} />
-
-								<div className="osahan-close">
-									<a href="#">
-										<FontAwesomeIcon icon={faTimesCircle} />
-									</a>
-								</div>
-							</div>
-							<div className="osahan-desc">
-								Your Video is still uploading, please keep this
-								page open until it's done.
-							</div>
-						</Col>
-					</Row>
-					<hr />
-
-					<VideoUploadForm />
-				</Container>
-				<ThinFooter />
-			</ContentWrapper>
-		</>
-	);
+          <VideoUploadForm />
+        </Container>
+        <ThinFooter />
+      </ContentWrapper>
+    </>
+  );
 };
 
 export default UploadVideo;

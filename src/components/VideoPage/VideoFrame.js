@@ -1,21 +1,23 @@
 import React from 'react'
 import VideoTitle from './VideoTitle'
-import AuthorBox from './AuthorBox'
+import './VideoPage.css'
+import AuthorBox from './AuthorBox';
+import { Player,ControlBar,PosterImage,LoadingSpinner,ClosedCaptionButton } from 'video-react';
+import ReactPlayer from 'react-player'
 function VideoFrame(props) {
-    const{title,url,id,views,shop,shopUrl,shopIcon}=props.vendorVideo
+    const {id,title,description,video,category_id,store_id,store_name,product_name,product_detail,thumbnail,hover_thumbnail,shopIcon,views,store_logo,uuid}=props.video;
     return (
 
         <> 
      
-            <div className="single-video"  >
-				 <iframe width="100%" height="315px" 
-                   src={`${url}?&autoplay=1`}
-                    title="YouTube video player"
-                     frameborder="0" 
-                     allow="autoplay"
-                     allowfullscreen>
-
-                     </iframe>
+            <div className="single-video"   >
+ 
+ <ReactPlayer url={`https://shop.hoolo.live/public/videos/${video}`}
+    controls={true}  width="100%"  style={{backgroundColor:'black'}}
+    
+    />
+  
+   
         </div>  
         <VideoTitle
       title={title}
@@ -24,9 +26,9 @@ function VideoFrame(props) {
 />
 <AuthorBox
 					subscriberCount="1.4M"
-					imgSrc={shopIcon}
-					channelName={shop}
-                    channelHref={shopUrl}
+					imgSrc={`https://shop.hulusthul.live/images/store/${store_logo}`}
+					channelName={store_name}
+                    channelHref={`https://shop.hulusthul.live/store/${uuid}/${store_name}`}
 					verified
 					publishedOn="16793"
 				/>

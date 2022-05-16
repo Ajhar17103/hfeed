@@ -11,12 +11,12 @@ function SearchModal({faSearch}) {
     return (
         <>
        
-      <Button    onClick={handleShow} className="serachModal">
-								<FontAwesomeIcon icon={faSearch}  />
-		</Button>
+ 
+								<FontAwesomeIcon icon={faSearch} style={{color:'#ffc502', fontSize:'20px'}}  onClick={handleShow}/>
+	 
 
       <Modal show={show} onHide={handleClose} >
-        <Modal.Header closeButton style={{height:'65px', backgroundColor:'#b1362f', }}  >
+        <Modal.Header   style={{height:'65px', backgroundColor:'rgb(255, 197, 2)',}}  >
           <Modal.Title> 
           <Form
 					inline
@@ -29,8 +29,8 @@ function SearchModal({faSearch}) {
 							className=""
 						/>
 						<InputGroup.Append>
-							<Button variant="light" style={{backgroundColor:'black'}}>
-								<FontAwesomeIcon icon={faSearch}  />
+							<Button variant="light" style={{backgroundColor:'#0e202f'}}>
+								<FontAwesomeIcon icon={faSearch} style={{color:'#f2e30e'}}  />
 							</Button>
 						</InputGroup.Append>
 					</InputGroup>
